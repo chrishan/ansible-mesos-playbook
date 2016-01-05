@@ -17,20 +17,10 @@ An ansible playbook for launching a mesos (0.26.0) cluster with native docker an
 * setup mongodb replset 
     - reference
         - http://stackoverflow.com/questions/32088341/how-can-i-setup-mongo-replica-set-with-ansible
-        - https://docs.mongodb.org/manual/tutorial/deploy-replica-set/#procedure
+        - https://docs.mongodb.org/v2.6/tutorial/deploy-replica-set/
 
-```
-    # connect a mongo shell to one of the replica set member
-    mongo
-    # initiate the replica set
-    rs.initiate()
-    rs.conf()
-    # add the other members to the replica set
-    rs.add('interal_ip2:27017')
-    rs.add('interal_ip3:27017')
-    # verify
-    rs.status()
-```
+* currently manually follow ansible.scripts.md. Later on will automate with ansible.
+
 
 ### The Setup
 

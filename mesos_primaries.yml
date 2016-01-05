@@ -19,10 +19,6 @@
     # - { role: 'ansible-marathon', zookeeper_hostnames: "{{ groups.mesos_primaries | join(':' + zookeeper_client_port + ',')  }}:{{ zookeeper_client_port  }}",  tags: ['mesos-tools'] }
     # - { role: 'ansible-consul', consul_client_address: "0.0.0.0",  consul_version: "0.4.1", consul_datacenter: "sea", consul_is_server: true, consul_servers: "{{ groups.mesos_primaries  }}", consul_is_ui: true, consul_join_at_start: true }
   vars:
-    mongodb_conf_replSet: "rs0"
     mongodb_conf_bind_ip: "0.0.0.0"
-    # mongodb_shell:
-    #   test:
-    #     - rs.initiate()
 
 
