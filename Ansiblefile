@@ -15,3 +15,5 @@ role "ansible-mesos",
   github: "chrishan/ansible-mesos"
 role "ansible-consul",
   github: "mhamrah/ansible-consul"
+role "Stouts.mongodb",
+  github: "Stouts/Stouts.mongodb"

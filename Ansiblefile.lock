@@ -1,4 +1,18 @@
 GIT
+  remote: https://github.com/Stouts/Stouts.mongodb
+  ref: master
+  sha: 17eabdfd6d8c9aac7f66b48f22763916959f3ed2
+  specs:
+    Stouts.mongodb (0.0.0)
+
+GIT
+  remote: https://github.com/chrishan/ansible-mesos
+  ref: master
+  sha: 484d192db312867331c097180990239a114792e3
+  specs:
+    ansible-mesos (0.0.0)
+
+GIT
   remote: https://github.com/mhamrah/ansible-consul
   ref: master
   sha: 38397d7103f659e9f3944da816d6b8a3b0e26018
@@ -27,13 +41,6 @@ GIT
     ansible-marathon (0.0.0)
 
 GIT
-  remote: https://github.com/mhamrah/ansible-mesos
-  ref: master
-  sha: 1717eefbdda66f78d41b0aa2fc77facafb2a2b1c
-  specs:
-    ansible-mesos (0.0.0)
-
-GIT
   remote: https://github.com/mhamrah/ansible-zookeeper
   ref: master
   sha: ba4340361486b58f13d7581e9a0ba87c11ec4b49
@@ -41,6 +48,7 @@ GIT
     ansible-zookeeper (0.0.0)
 
 DEPENDENCIES
+  Stouts.mongodb (>= 0)
   ansible-consul (>= 0)
   ansible-docker (>= 0)
   ansible-java8 (>= 0)

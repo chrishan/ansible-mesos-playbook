@@ -1,7 +1,7 @@
 ansible-mesos-playbook
 ======================
 
-An ansible playbook for launching a mesos cluster with native docker and mesos executors, along with [Marathon](https://github.com/mesosphere/marathon)), [Consul](http://consul.io) and HAProxy support. Run this on Ubuntu 14.04 LTS (preferred) or Centos/RHEL 6. [Read the blog post](http://blog.michaelhamrah.com/2014/06/setting-up-a-multi-node-mesos-cluster-running-docker-haproxy-and-marathon-with-ansible/) for a descriptive overview.
+An ansible playbook for launching a mesos (0.26.0) cluster with native docker and mesos executors, along with [Marathon](https://github.com/mesosphere/marathon)), [Consul](http://consul.io) and HAProxy support. Run this on Ubuntu 14.04 LTS (preferred) or Centos/RHEL 6. [Read the blog post](http://blog.michaelhamrah.com/2014/06/setting-up-a-multi-node-mesos-cluster-running-docker-haproxy-and-marathon-with-ansible/) for a descriptive overview.
 
 ### Getting Started
 
@@ -12,6 +12,25 @@ An ansible playbook for launching a mesos cluster with native docker and mesos e
 * ```cp hosts.sample hosts``` and update the ```mesos_masters``` and ```mesos_slaves``` groups.
 * ```cp ansible.cfg.sample ansible.cfg``` to ensure librarian_roles is in the ansible path (```ansible.cfg``` is git-ignored).
 * Run ```ansible-playbook playbook.yml```.
+
+### manual operation
+* setup mongodb replset 
+    - reference
+        - http://stackoverflow.com/questions/32088341/how-can-i-setup-mongo-replica-set-with-ansible
+        - https://docs.mongodb.org/manual/tutorial/deploy-replica-set/#procedure
+
+```
+    # connect a mongo shell to one of the replica set member
+    mongo
+    # initiate the replica set
+    rs.initiate()
+    rs.conf()
+    # add the other members to the replica set
+    rs.add('interal_ip2:27017')
+    rs.add('interal_ip3:27017')
+    # verify
+    rs.status()
+```
 
 ### The Setup
 
@@ -28,7 +47,10 @@ An ansible playbook for launching a mesos cluster with native docker and mesos e
 There are a variety of tweaks you can make to this playbook for your needs.
 
 * Don't want Marathon, Consul or HAProxy? Simply remove roles from mesos_primaries.yml
-* Don't want to overload the primaries? Simply add new groups and remap roles appropriately. 
+* Don't want to overload the primaries? Simply add new groups and remap roles appropriately.  
+
+### verifying installation
+* try access the mesos console at http://<master-ip>:5050 (where <master-ip> is any of the master IP addresses)
 
 ### Troubelshooting
 
