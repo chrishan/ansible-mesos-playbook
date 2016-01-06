@@ -1,8 +1,14 @@
 [mesos_primaries]
-ec2-54-204-214-172.compute-1.amazonaws.com zoo_id=1 consul_bootstrap=true
-ec2-54-235-59-210.compute-1.amazonaws.com zoo_id=2
-ec2-54-83-161-83.compute-1.amazonaws.com zoo_id=3
+54.179.171.20 zoo_id=1
+52.77.223.15 zoo_id=2
+54.179.171.19 zoo_id=3
+
+[mongo_master]
+54.179.171.20 mongodb_master=True
+
+[mongo_replicas]
+52.77.223.15
+54.179.171.19
 
 [mesos_workers]
-ec2-54-91-78-105.compute-1.amazonaws.com
-ec2-54-82-227-223.compute-1.amazonaws.com 
+54.179.171.23

@@ -1,16 +1,16 @@
 GIT
-  remote: https://github.com/Stouts/Stouts.mongodb
-  ref: master
-  sha: 17eabdfd6d8c9aac7f66b48f22763916959f3ed2
-  specs:
-    Stouts.mongodb (0.0.0)
-
-GIT
   remote: https://github.com/chrishan/ansible-mesos
   ref: master
   sha: 484d192db312867331c097180990239a114792e3
   specs:
     ansible-mesos (0.0.0)
+
+GIT
+  remote: https://github.com/chrishan/ansible-role-mongodb
+  ref: master
+  sha: 0310a42b5b0121603fa7f56256936471603afc92
+  specs:
+    greendayonfire.mongodb (1.4.10)
 
 GIT
   remote: https://github.com/mhamrah/ansible-consul
@@ -48,11 +48,11 @@ GIT
     ansible-zookeeper (0.0.0)
 
 DEPENDENCIES
-  Stouts.mongodb (>= 0)
   ansible-consul (>= 0)
   ansible-docker (>= 0)
   ansible-java8 (>= 0)
   ansible-marathon (>= 0)
   ansible-mesos (>= 0)
   ansible-zookeeper (>= 0)
+  greendayonfire.mongodb (>= 0)
 

@@ -1,5 +1,6 @@
 tmp
 librarian_roles
+ansible.scripts.md
 ansible.cfg
 hosts*
 *.bak
